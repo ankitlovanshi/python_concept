@@ -284,3 +284,16 @@ inventory.remove_item("Realme 5 pro")
 inventory.show_items()
 inventory.get_item("Realme 5")
 inventory.get_total_value()
+
+
+
+'''
+Question 4: Employee Management System
+Create a class called Employee to manage employee information. Each employee should have an ID, name, and salary. The class should also have a class attribute to keep track of the total number of employees. Implement the following methods:
+
+__init__(self, id, name, salary): Initializes the employee with ID, name, and salary, and increments the total number of employees.
+get_details(self): Returns the details of the employee.
+update_salary(self, new_salary): Updates the employee's salary.
+get_total_employees(): Class method to return the total number of employees.
+Implement the class and provide a few example usages.   
+'''
