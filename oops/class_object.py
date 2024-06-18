@@ -221,17 +221,17 @@ library.list_borrowed_books()
 
 
 
-'''
-Advanced Level Question
-Question 3: Inventory Management System
-Create a class called Inventory to manage items in a store. Each item should have a name, quantity, and price. The class should have the following methods:
+# '''
+# Advanced Level Question
+# Question 3: Inventory Management System
+# Create a class called Inventory to manage items in a store. Each item should have a name, quantity, and price. The class should have the following methods:
 
-add_item(name, quantity, price): Adds a new item to the inventory or updates the quantity if the item already exists.
-remove_item(name, quantity): Removes a specified quantity of an item from the inventory, ensuring that the quantity does not go negative.
-get_item(name): Returns the details of a specific item (name, quantity, and price).
-get_total_value(): Returns the total value of the inventory (sum of the quantity times price for all items).
+# add_item(name, quantity, price): Adds a new item to the inventory or updates the quantity if the item already exists.
+# remove_item(name, quantity): Removes a specified quantity of an item from the inventory, ensuring that the quantity does not go negative.
+# get_item(name): Returns the details of a specific item (name, quantity, and price).
+# get_total_value(): Returns the total value of the inventory (sum of the quantity times price for all items).
 
-'''
+# '''
 
 class Item:
     def __init__(self, name, quantity, price) -> None:
@@ -256,20 +256,31 @@ class Inventory:
             
     def get_item(self, name):
         for item in self.items:
-            print(item.name)
-            print(item.price)
-            print(item.quantity)
-            return
+            if item.name == name:
+                print(item.name)
+                print(item.price)
+                print(item.quantity)
+                return
+            else:
+                print("Item is not found")
+                return
         
-    def show_items(self):
+    def get_total_value(self):
+        total_price = 0
+        total_quantity = 0
         for item in self.items:
-            print(item.name)
-
+            total_price = total_price + item.price
+            total_quantity = total_quantity + item.quantity
+        
+        print("total price: ", total_price)
+        print("total quantity: ", total_quantity)
 
 inventory = Inventory()
 inventory.add_items("Realme 5 pro", 10, 15000)
 inventory.add_items("Boat Smart Watch", 7, 1500)
 inventory.add_items("Bottel", 10, 50)
 
-# inventory.remove_item("Realme 5 pro")
-# inventory.show_items()
+inventory.remove_item("Realme 5 pro")
+inventory.show_items()
+inventory.get_item("Realme 5")
+inventory.get_total_value()
